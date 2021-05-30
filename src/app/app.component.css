@@ -1,0 +1,8 @@
+.active {
+  color: red;
+}
+
+#dashboard-btn {
+  color: black;
+  font-weight: 500;
+}

@@ -1,0 +1,32 @@
+<div class="content">
+  <h2>Patient data</h2>
+  <mat-form-field appearance="outline">
+    <mat-label>Name</mat-label>
+    <input matInput placeholder="Name" [(ngModel)]="patient.name" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Gender</mat-label>
+    <mat-select [(ngModel)]="patient.gender">
+      <mat-option *ngFor="let gender of genders" [value]="gender">
+        {{ gender }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Birthdate</mat-label>
+    <input matInput [matDatepicker]="picker" [(ngModel)]="patient.birthDate" />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <button
+    id="save-btn"
+    mat-raised-button
+    color="primary"
+    (click)="savePatient()"
+  >
+    Save Patient
+  </button>
+</div>

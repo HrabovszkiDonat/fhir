@@ -1,0 +1,53 @@
+<mat-card>
+  <h2 id="title">{{ title }}</h2>
+  <form [formGroup]="formGroup">
+    <mat-form-field class="custom-formfield" appearance="outline">
+      <mat-label>Patient</mat-label>
+      <mat-select formControlName="patient">
+        <mat-option
+          *ngFor="let patient of patients$ | async"
+          [value]="patient.payload.doc.data().name"
+        >
+          {{ patient.payload.doc.data().name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="custom-formfield" appearance="outline">
+      <mat-label>Status</mat-label>
+      <mat-select formControlName="status">
+        <mat-option *ngFor="let status of statuses" [value]="status">
+          {{ status }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="custom-formfield" appearance="outline">
+      <mat-label>Priority</mat-label>
+      <mat-select formControlName="priority">
+        <mat-option *ngFor="let priority of priorities" [value]="priority">
+          {{ priority }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="custom-formfield" appearance="outline">
+      <mat-label>Topic</mat-label>
+      <mat-select formControlName="topic">
+        <mat-option *ngFor="let topic of topics" [value]="topic">
+          {{ topic }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button
+      id="save-btn"
+      mat-raised-button
+      color="primary"
+      [disabled]="formGroup.invalid || formGroup.pristine"
+      (click)="saveHandler()"
+    >
+      Mentés
+    </button>
+  </form>
+</mat-card>

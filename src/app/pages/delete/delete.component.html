@@ -1,0 +1,5 @@
+<app-custom-table
+  [data]="communications$ | async"
+  [columns]="columns"
+  (rowClick)="deleteHandler($event)"
+></app-custom-table>

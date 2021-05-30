@@ -1,0 +1,17 @@
+<div *ngIf="addBtn" class="action-buttons">
+  <button id="add-btn" mat-raised-button (click)="addCommunication()">
+    <mat-icon>add</mat-icon>
+    Create
+  </button>
+
+  <button mat-raised-button routerLink="/delete">
+    <mat-icon>clear</mat-icon>
+    Delete
+  </button>
+</div>
+
+<app-custom-table
+  [data]="communications$ | async"
+  [columns]="columns"
+  (rowClick)="rowClickHandler($event)"
+></app-custom-table>

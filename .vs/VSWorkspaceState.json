@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\.firebase",
+    "\\public",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\constants",
+    "\\src\\app\\directives",
+    "\\src\\app\\models",
+    "\\src\\app\\pages",
+    "\\src\\app\\pages\\communications"
+  ],
+  "PreviewInSolutionExplorer": false
+}
